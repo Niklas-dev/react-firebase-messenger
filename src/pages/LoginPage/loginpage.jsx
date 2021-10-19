@@ -5,8 +5,6 @@ import GoogleLogo from "./assets/google_logo.png";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import { doc, setDoc } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -25,7 +23,9 @@ const db = firebase.firestore();
 const signInWithGoogle = async () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   await auth.signInWithPopup(provider);
-  console.log("log");
+
+  let uid = auth.currentUser.uid;
+  await db.collection("users").doc(uid).set({ id: uid, phone: "null" });
 };
 
 const signOut = () => {
