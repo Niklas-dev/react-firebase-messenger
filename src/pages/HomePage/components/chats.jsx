@@ -14,15 +14,6 @@ function Chats() {
       <div className="p-4 bg-muted">
         <Message />
         <MyMessage />
-        <MyMessage />
-        <MyMessage />
-        <MyMessage />
-        <MyMessage />
-        <MyMessage />
-        <MyMessage />
-        <MyMessage />
-        <MyMessage />
-        <MyMessage />
       </div>
       <div className="bg-white p-2 mt-auto d-flex flex-row justify-content-between sticky-bottom">
         <input
